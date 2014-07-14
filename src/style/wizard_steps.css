@@ -1,0 +1,96 @@
+/* https://coderwall.com/p/-7trcg */
+
+.wizard-steps {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.wizard-steps li {
+  list-style-type: none;
+  display: inline-block;
+
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  width: 20%;
+
+  background-color: #f0f0f0;
+}
+
+.wizard-steps li > span {
+  display: block;
+
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.wizard-steps li.done > span {
+  color: #666;
+  background-color: #0C0;
+}
+
+.wizard-steps li > span:after,
+.wizard-steps li > span:before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: solid transparent;
+  border-left-color: #f0f0f0;
+  border-width: 15px;
+}
+
+.wizard-steps li > span:after {
+  top: -5px;
+  z-index: 1;
+  border-left-color: white;
+  border-width: 20px;
+}
+
+.wizard-steps li > span:before {
+  z-index: 2;
+}
+
+.wizard-steps li.done + li > span:before {
+  border-left-color: #0C0;
+}
+
+.wizard-steps li:first-child > span:after,
+.wizard-steps li:first-child > span:before {
+  display: none;
+}
+
+.wizard-steps li:first-child i,
+.wizard-steps li:last-child i {
+  display: block;
+  height: 0;
+  width: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: solid transparent;
+  border-left-color: white;
+  border-width: 15px;
+}
+
+.wizard-steps li:last-child i {
+  left: auto;
+  right: -15px;
+
+  border-left-color: transparent;
+  border-top-color: white;
+  border-bottom-color: white;
+}
